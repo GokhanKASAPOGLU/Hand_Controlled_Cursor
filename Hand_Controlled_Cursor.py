@@ -107,7 +107,7 @@ while True:
             double_delay = 1
             double_clk_thread.start()
 
-        # close all finger to close program  
+        # close all fingers to close program  
         if fingers[0] == 1 and fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
             break
 
