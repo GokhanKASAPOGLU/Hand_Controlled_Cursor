@@ -68,7 +68,7 @@ while True:
         fingers = detector.fingersUp(hands[0])
         print(fingers)
         # array[0,1,1,1,1] (all open) [thump,index,middle, ring, little]
-        #Fingers are represented as binary values, where 0 indicates a closed finger and 1 indicates an open finger, except for the thumb. For the thumb, 0 represents an open position, and 1 represents a closed position
+        # Fingers are represented as binary values, where 0 indicates a closed finger and 1 indicates an open finger, except for the thumb. For the thumb, 0 represents an open position, and 1 represents a closed position
 
         # mouse movement
         if fingers [0] == 0 and fingers[1] == 1 and fingers[2] == 0:
@@ -81,19 +81,19 @@ while True:
         if fingers [0] == 0 and fingers[1] == 1 and fingers[2] == 1 :
             if abs(ind_x-mid_x) < 25:
 
-                #left click
+                # left click
                 if l_delay == 0 and fingers[4] == 0:
                     mouse.click(button="left")
                     l_delay = 1
                     l_clk_thread.start()
                 
-                #right click
+                # right click
                 if r_delay == 0 and fingers[4] == 1:
                     mouse.click(button="right")
                     r_delay = 1
                     r_clk_thread.start()
         
-        #mouse scrolling
+        # mouse scrolling
         if fingers[0] == 1 and fingers[1] == 1 and fingers[2] == 1 and fingers[4] == 0: 
             if abs(ind_x-mid_x) < 25:
                 mouse.wheel(delta=-1)
@@ -101,13 +101,13 @@ while True:
             if abs(ind_x-mid_x) < 25:
                 mouse.wheel(delta=1)
 
-        #double click
+        # double click
         if fingers[0] == 1 and fingers[1] == 1 and fingers[2] == 0 and fingers[4] == 0 and double_delay == 0:
             mouse.double_click(button="left")
             double_delay = 1
             double_clk_thread.start()
 
-        #close all finger to close program  
+        # close all finger to close program  
         if fingers[0] == 1 and fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
             break
 
