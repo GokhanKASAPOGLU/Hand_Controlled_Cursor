@@ -68,7 +68,7 @@ while True:
         fingers = detector.fingersUp(hands[0])
         print(fingers)
         # array[0,1,1,1,1] (all open) [thump,index,middle, ring, little]
-        ##Fingers are represented as binary values, where 0 indicates a closed finger and 1 indicates an open finger, except for the thumb. For the thumb, 0 represents an open position, and 1 represents a closed position
+        #Fingers are represented as binary values, where 0 indicates a closed finger and 1 indicates an open finger, except for the thumb. For the thumb, 0 represents an open position, and 1 represents a closed position
 
         # mouse movement
         if fingers [0] == 0 and fingers[1] == 1 and fingers[2] == 0:
